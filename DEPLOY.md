@@ -1,6 +1,8 @@
 # Deployment note — VMG realtor referral page
 
-**Status: built, NOT deployed.** This folder is a finished, self-contained static site. Nothing here is live until Paul says go.
+**Status: built, in GitHub, NOT yet live on Netlify.** Paul approved deploy at `refer.vaughanmortgagegroup.ca` on Oct 26, 2026 ("Both — page live, then send"). Repo created and pushed Oct 26: https://github.com/vaughanmortgages-design/vmg-referral-page (public, branch `main`).
+
+**Remaining step (one Netlify dashboard session, signed in as vaughanmortgages@gmail.com, team "Vaughan Mortgage Group"):** Add new site → Import an existing project → GitHub → `vmg-referral-page` → Deploy (netlify.toml already sets publish `.`, no build command). Then Site configuration → Domain management → add custom domain `refer.vaughanmortgagegroup.ca` (if Netlify asks for a DNS record at the registrar: CNAME `refer` → the site's `*.netlify.app` address). Then Forms → confirm `vmg-referral` detected → turn on email notifications to vaughanmortgages@gmail.com. Then run the phone test in this file.
 
 ## What's in the folder
 
