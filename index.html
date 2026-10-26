@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en-CA">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Refer a Client — Paul Malandrino | Vaughan Mortgage Group</title>
+<meta name="description" content="Realtors: send Paul Malandrino your client in one tap — WhatsApp, email, or a 30-second form. Acknowledged within 60 minutes during business hours. Your client stays your client.">
+<meta name="theme-color" content="#0a2240">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Refer to Paul">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="assets/icon-192.png">
+<link rel="manifest" href="manifest.webmanifest">
+<style>
+  :root{
+    --navy:#0a2240; --navy-deep:#071a33; --navy-mid:#10365f;
+    --orange:#f26b1d; --orange-dark:#d9550d;
+    --wa:#1faa55; --wa-dark:#178a44;
+    --ink:#12212e; --muted:#5a6b7d; --bg:#f4f6f8; --card:#ffffff;
+    --radius:16px;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Roboto,Helvetica,Arial,sans-serif;
+    background:var(--bg); color:var(--ink); line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:560px; margin:0 auto;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative; overflow:hidden; color:#fff;
+    background:var(--navy) url("assets/skyline.jpg") center 30%/cover no-repeat;
+  }
+  .hero::before{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(7,26,51,.88) 0%, rgba(10,34,64,.72) 46%, rgba(10,34,64,.94) 100%);
+  }
+  .hero-in{position:relative; padding:26px 22px 0;}
+  .brand{display:flex; align-items:center; gap:12px;}
+  .brand-mark{
+    font-size:34px; font-weight:800; line-height:1; color:#fff; letter-spacing:-.5px;
+  }
+  .brand-mark .eight{
+    display:inline-flex; align-items:center; justify-content:center;
+    background:var(--orange); color:#fff; border-radius:10px;
+    width:46px; height:46px; font-size:30px; margin-right:10px; vertical-align:-6px;
+  }
+  .brand-mark .tw{color:#fff;}
+  .brand-sub{
+    margin-top:6px; font-size:12px; font-weight:700; letter-spacing:.22em; color:#ffb37e;
+    text-transform:uppercase;
+  }
+  .hero h1{
+    margin-top:26px; font-size:34px; line-height:1.14; font-weight:800; letter-spacing:-.5px;
+  }
+  .hero h1 .accent{color:var(--orange);}
+  .hero .lede{margin-top:12px; font-size:16.5px; color:#e8eef5; max-width:44ch;}
+  .hero-person{
+    position:relative; display:flex; align-items:flex-end; gap:14px; margin-top:22px;
+  }
+  .hero-person img{
+    width:118px; height:auto; display:block; align-self:flex-end;
+    filter:drop-shadow(0 6px 14px rgba(0,0,0,.35));
+  }
+  .hero-person .who{padding-bottom:16px;}
+  .hero-person .who .name{font-size:19px; font-weight:800;}
+  .hero-person .who .role{font-size:13.5px; color:#cfdce9;}
+  .hero-person .who .phone{
+    display:inline-block; margin-top:8px; font-size:16px; font-weight:800; color:#fff;
+    text-decoration:none; border-bottom:2px solid var(--orange); padding-bottom:1px;
+  }
+
+  /* ---------- Sections ---------- */
+  section{padding:22px 18px 4px;}
+  .card{
+    background:var(--card); border-radius:var(--radius); padding:20px;
+    box-shadow:0 2px 14px rgba(10,34,64,.08);
+  }
+  h2{font-size:20px; font-weight:800; color:var(--navy); letter-spacing:-.3px; margin-bottom:12px;}
+
+  .commit{list-style:none;}
+  .commit li{
+    display:flex; gap:12px; padding:11px 0; border-bottom:1px solid #e7ecf1;
+    font-size:15.5px;
+  }
+  .commit li:last-child{border-bottom:none; padding-bottom:2px;}
+  .commit .tick{
+    flex:0 0 24px; width:24px; height:24px; border-radius:50%;
+    background:var(--orange); color:#fff; font-weight:800; font-size:14px;
+    display:flex; align-items:center; justify-content:center; margin-top:1px;
+  }
+  .commit strong{color:var(--navy);}
+
+  /* ---------- Big actions ---------- */
+  .actions{display:grid; gap:12px;}
+  .btn{
+    display:flex; align-items:center; justify-content:center; gap:10px;
+    min-height:60px; padding:14px 18px; border-radius:14px;
+    font-size:17.5px; font-weight:800; text-decoration:none; text-align:center;
+    border:none; cursor:pointer; width:100%;
+    transition:transform .05s ease, background .15s ease;
+  }
+  .btn:active{transform:scale(.985);}
+  .btn-wa{background:var(--wa); color:#fff;}
+  .btn-wa:hover{background:var(--wa-dark);}
+  .btn-mail{background:var(--navy); color:#fff;}
+  .btn-mail:hover{background:var(--navy-mid);}
+  .btn-form{background:#fff; color:var(--navy); border:2px solid var(--navy);}
+  .btn .sub{display:block; font-size:12.5px; font-weight:600; opacity:.85;}
+  .btn span{text-align:center;}
+
+  /* ---------- Form ---------- */
+  .field{margin-bottom:14px;}
+  label.lbl{display:block; font-size:13.5px; font-weight:700; color:var(--navy); margin-bottom:6px;}
+  input[type="text"], input[type="tel"], input[type="email"], select, textarea{
+    width:100%; min-height:52px; padding:12px 14px; font-size:16px;
+    border:1.5px solid #c8d2dd; border-radius:10px; background:#fff; color:var(--ink);
+    appearance:none; -webkit-appearance:none;
+  }
+  input:focus, select:focus, textarea:focus{outline:none; border-color:var(--orange);}
+  .row2{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  @media (max-width:420px){ .row2{grid-template-columns:1fr;} }
+  .need-grid{display:grid; grid-template-columns:1fr 1fr; gap:10px;}
+  .need-grid label{
+    display:flex; align-items:center; justify-content:center; min-height:52px;
+    border:1.5px solid #c8d2dd; border-radius:10px; font-size:15.5px; font-weight:700;
+    color:var(--navy); cursor:pointer; padding:10px; text-align:center;
+  }
+  .need-grid input{position:absolute; opacity:0; pointer-events:none;}
+  .need-grid label:has(input:checked){background:var(--navy); color:#fff; border-color:var(--navy);}
+  .consent{
+    display:flex; gap:12px; align-items:flex-start; background:#fdf3ec;
+    border:1.5px solid #f5cfb4; border-radius:10px; padding:14px; margin:16px 0;
+  }
+  .consent input{width:26px; height:26px; flex:0 0 26px; accent-color:var(--orange); margin-top:1px;}
+  .consent label{font-size:14.5px; line-height:1.45; cursor:pointer;}
+  .consent.error{border-color:#c0392b; background:#fdeeec;}
+  .form-note{font-size:13px; color:var(--muted); margin-top:10px; text-align:center;}
+  .thanks{
+    display:none; background:#eafaf0; border:1.5px solid #9adbb2; color:#14532d;
+    border-radius:10px; padding:16px; font-size:15.5px; font-weight:600; text-align:center;
+  }
+  .sr-only{position:absolute; left:-9999px; width:1px; height:1px; overflow:hidden;}
+
+  .save-hint{
+    margin:22px 18px 4px; background:var(--navy); color:#e8eef5; border-radius:var(--radius);
+    padding:18px 20px; font-size:15px;
+  }
+  .save-hint strong{color:#fff;}
+  .save-hint .accent{color:var(--orange); font-weight:800;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    margin-top:26px; background:var(--navy-deep); color:#b9c8d8;
+    padding:24px 22px calc(28px + env(safe-area-inset-bottom)); font-size:13px; line-height:1.6;
+  }
+  footer .fname{color:#fff; font-weight:800; font-size:15px;}
+  footer a{color:#ffb37e; text-decoration:none; font-weight:700;}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <!-- ================= HERO ================= -->
+  <header class="hero">
+    <div class="hero-in">
+      <div class="brand">
+        <div>
+          <div class="brand-mark"><span class="eight">8</span><span class="tw">Twelve</span> Mortgage</div>
+          <div class="brand-sub">Vaughan Mortgage Group</div>
+        </div>
+      </div>
+
+      <h1>Send me your client.<br><span class="accent">I&rsquo;ll take it from there.</span></h1>
+      <p class="lede">One tap below — WhatsApp, email, or a 30-second form. You get a mortgage partner who moves fast, keeps you posted, and sends your client back to you for everything else.</p>
+
+      <div class="hero-person">
+        <img src="assets/paul-bust.png" alt="Paul Malandrino, Mortgage Agent Level 2" width="610" height="601">
+        <div class="who">
+          <div class="name">Paul Malandrino</div>
+          <div class="role">Mortgage Agent Level 2<br>Vaughan &amp; the GTA</div>
+          <a class="phone" href="tel:+14168918684">416-891-8684</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ================= COMMITMENTS ================= -->
+  <section>
+    <div class="card">
+      <h2>What you get, every time</h2>
+      <ul class="commit">
+        <li><span class="tick">&#10003;</span><span><strong>Answered within 60 minutes</strong> during business hours — your referral is acknowledged fast, while your client is still warm.</span></li>
+        <li><span class="tick">&#10003;</span><span><strong>Status updates at every stage</strong> — application, approval, funding. You always know where the file stands, no chasing.</span></li>
+        <li><span class="tick">&#10003;</span><span><strong>A direct line to me</strong> — 416-891-8684. No call centre, no handoffs, no wondering who has your file.</span></li>
+        <li><span class="tick">&#10003;</span><span><strong>Your client stays your client.</strong> I do mortgages — that&rsquo;s all. Everything else comes back to you.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ================= ACTIONS ================= -->
+  <section>
+    <h2 style="padding-left:2px;">Refer in one tap</h2>
+    <div class="actions">
+      <a class="btn btn-wa" href="https://wa.me/14168918684?text=Hi%20Paul%2C%20I%20have%20a%20client%20for%20you%3A%20">
+        <span>WhatsApp Paul<span class="sub">Fastest — message opens ready to send</span></span>
+      </a>
+      <a class="btn btn-mail" href="mailto:vaughanmortgages@gmail.com?subject=Client%20referral">
+        <span>Email the referral<span class="sub">vaughanmortgages@gmail.com</span></span>
+      </a>
+      <a class="btn btn-form" href="#referral-form">
+        <span>Use the 30-second form<span class="sub">Below — goes straight to Paul</span></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ================= FORM ================= -->
+  <section id="referral-form">
+    <div class="card">
+      <h2>Referral form</h2>
+
+      <form id="vmg-referral-form" name="vmg-referral" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+        <input type="hidden" name="form-name" value="vmg-referral">
+        <p class="sr-only" hidden><label>Don&rsquo;t fill this out if you&rsquo;re human: <input name="bot-field"></label></p>
+
+        <div class="field">
+          <label class="lbl" for="realtor-name">Your name (realtor)</label>
+          <input type="text" id="realtor-name" name="realtor-name" autocomplete="name" required>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label class="lbl" for="realtor-phone">Your phone</label>
+            <input type="tel" id="realtor-phone" name="realtor-phone" autocomplete="tel">
+          </div>
+          <div class="field">
+            <label class="lbl" for="realtor-email">Your email</label>
+            <input type="email" id="realtor-email" name="realtor-email" autocomplete="email">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="lbl" for="client-name">Client&rsquo;s name</label>
+          <input type="text" id="client-name" name="client-name" required>
+        </div>
+        <div class="row2">
+          <div class="field">
+            <label class="lbl" for="client-phone">Client&rsquo;s phone</label>
+            <input type="tel" id="client-phone" name="client-phone">
+          </div>
+          <div class="field">
+            <label class="lbl" for="client-email">Client&rsquo;s email</label>
+            <input type="email" id="client-email" name="client-email">
+          </div>
+        </div>
+
+        <div class="field">
+          <label class="lbl">What do they need?</label>
+          <div class="need-grid" role="radiogroup" aria-label="What do they need?">
+            <label><input type="radio" name="need" value="Purchase" checked>Purchase</label>
+            <label><input type="radio" name="need" value="Renewal">Renewal</label>
+            <label><input type="radio" name="need" value="Refinance">Refinance</label>
+            <label><input type="radio" name="need" value="Pre-approval">Pre-approval</label>
+          </div>
+        </div>
+
+        <div class="consent" id="consent-box">
+          <input type="checkbox" id="client-consent" name="client-consent" value="yes">
+          <label for="client-consent">My client has agreed to be contacted by Paul Malandrino about their mortgage.</label>
+        </div>
+
+        <button type="submit" class="btn btn-mail" id="submit-btn"><span>Send the referral</span></button>
+        <p class="form-note">Goes straight to Paul. Acknowledged within 60 minutes during business hours.</p>
+        <p class="thanks" id="form-thanks">Got it — thank you. Paul has your referral and will acknowledge it within 60 minutes during business hours.</p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ================= SAVE HINT ================= -->
+  <div class="save-hint">
+    <strong>Keep me one tap away.</strong> Save this page to your home screen — tap <span class="accent">Share &rarr; Add to Home Screen</span> — and the next referral takes ten seconds.
+  </div>
+
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <p class="fname">Paul Malandrino, Mortgage Agent Level 2</p>
+    <p>Vaughan Mortgage Group &middot; 8Twelve Mortgage Corp.<br>
+    FSRA Lic. #13072 &middot; Agent Lic. #M25000307</p>
+    <p style="margin-top:10px;">Call or text: <a href="tel:+14168918684">416-891-8684</a><br>
+    Email: <a href="mailto:vaughanmortgages@gmail.com">vaughanmortgages@gmail.com</a></p>
+    <p style="margin-top:10px;">One bank is one answer. I shop 40+ lenders.</p>
+  </footer>
+
+</div>
+
+<script>
+  // Consent is REQUIRED: the form will not submit without the client's agreement.
+  // Submission posts to Netlify Forms (free, built into the hosting) — same pattern
+  // as the ameliasworld.ca signup form. Referrals land in the Netlify dashboard
+  // under Forms > vmg-referral, and can be forwarded to email from there.
+  (function () {
+    var form = document.getElementById('vmg-referral-form');
+    var consent = document.getElementById('client-consent');
+    var consentBox = document.getElementById('consent-box');
+    var thanks = document.getElementById('form-thanks');
+    var submitBtn = document.getElementById('submit-btn');
+
+    consent.addEventListener('change', function () {
+      if (consent.checked) consentBox.classList.remove('error');
+    });
+
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      if (!consent.checked) {
+        consentBox.classList.add('error');
+        consentBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        consent.focus();
+        return;
+      }
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
+      submitBtn.disabled = true;
+      submitBtn.querySelector('span').textContent = 'Sending…';
+
+      var data = new FormData(form);
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: new URLSearchParams(data).toString()
+      }).then(function () {
+        form.reset();
+        thanks.style.display = 'block';
+        thanks.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        submitBtn.querySelector('span').textContent = 'Send the referral';
+        submitBtn.disabled = false;
+      }).catch(function () {
+        // If the AJAX post fails, fall back to a normal form submission.
+        form.submit();
+      });
+    });
+  })();
+</script>
+</body>
+</html>
